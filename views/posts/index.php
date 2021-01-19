@@ -11,7 +11,7 @@
 <body>
     <a href="/">⬅️ Retour à la page d'accueil</a>
     <h1>Les recettes de Tonton</h1>
-    <a href="#" role="button">➕ Nouvelle recette</a>
+    <a href="/posts/create" role="button">➕ Nouvelle recette</a>
     <?php foreach ($posts as $post) : ?>
         <article>
             <header>

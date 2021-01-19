@@ -147,7 +147,7 @@ class QueryBuilder
     }
     // fin construction du select
 
-    //debut ci=onstruction du insert
+    //debut construction du insert
     private function buildInsert(Model $model): bool
     {
         // INSERT INTO table (column1, column2) VALUES ('column1', 'column2')

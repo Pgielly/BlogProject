@@ -12,7 +12,7 @@ class Post extends Model
     private string $message;
     private string $creation_date;
 
-    protected array $fillable = ['title', 'content'];
+    protected array $fillable = ['user_id', 'title', 'message'];
 
     public function getId(): int
     {
