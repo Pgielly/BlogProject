@@ -4,11 +4,12 @@ namespace App\Models;
 
 use App\Core\Database\Model;
 
-class Recipe extends Model
+class Post extends Model
 {
     private int $id;
+    private int $user_id;
     private string $title;
-    private string $content;
+    private string $message;
     private string $creation_date;
 
     protected array $fillable = ['title', 'content'];
@@ -23,6 +24,16 @@ class Recipe extends Model
         $this->id = $id;
     }
 
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    public function setUserId(int $user_id): void
+    {
+        $this->user_id = $user_id;
+    }
+
     public function getTitle(): string
     {
         return $this->title;
@@ -33,14 +44,14 @@ class Recipe extends Model
         $this->title = $title;
     }
 
-    public function getContent(): string
+    public function getMessage(): string
     {
-        return $this->content;
+        return $this->message;
     }
 
-    public function setContent(string $content): void
+    public function setMessage(string $message): void
     {
-        $this->content = $content;
+        $this->message = $message;
     }
 
     public function getCreationDate(): string

@@ -6,7 +6,7 @@ CREATE TABLE if not exists comments
   post_id int NOT NULL,
   user_id int NOT NULL,
   message text NOT NULL,
-  time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  creation_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE if not exists posts
   user_id int NOT NULL,
   title text NOT NULL,
   message text NOT NULL,
-  time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  creation_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
 
@@ -65,7 +65,7 @@ insert into users (name, mdp, email)
 values ('matvki38', '4a7d1ed414474e4033ac29ccb8653d9b', 'oui@gmail.com'); -- mdp 0000
 
 insert into posts (user_id, title, message)
-values (2, 'Le nouvelle album de ACDC', 'Je aime beaucoup ce nouvelle album, en plus de ca il on fait un vinyle transparent rouge. <img src="https://www.metalzone.fr/wp-content/uploads/2020/10/ac-dc-power-up-vinyle-rouge-e1602575054317.jpg" alt="un vinyle rouge">');
+values (2, 'Le nouvelle album de ACDC', 'Je aime beaucoup ce nouvelle album, en plus de ca il on fait un vinyle transparent rouge.');
 
 insert into comments (post_id, user_id, message)
 values (1, 2, 'je continue en disant que il faut a tout pris le écouter.');

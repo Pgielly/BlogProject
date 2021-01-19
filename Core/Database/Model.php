@@ -7,7 +7,7 @@ class Model
     protected string $table;
 
     protected array $fillable = [];
-
+    //   debut pour recuperer la table
     public function getTable(): string
     {
         if (isset($this->table)) {
@@ -20,21 +20,26 @@ class Model
     private function guessTable(): string
     {
         $callingClass = static::class;
-        // 'App\Models\Recipe'
+        // 'App\Models\Post'
         $callingClass = explode('\\', $callingClass);
-        // ['App', 'Models', 'Recipe']
+        // ['App', 'Models', 'Post']
         $callingClass = array_pop($callingClass);
 
-        // Recipe
+        // Post
 
         return strtolower($callingClass).'s'; // recipes
     }
+    //    table recuperée 
 
+    // pas d'infos
     public function getFillable(): array
     {
         return $this->fillable;
     }
+    // pas d'infos
 
+
+    //permet de recuperer la colonne a recuperer
     public function __set(string $name, mixed $value): void
     {
         // $name === 'creation_date'
@@ -63,32 +68,34 @@ class Model
             // call_user_func([$this, $getter], $value);
             return $this->$getter();
         }
-
         return null;
     }
+    //fin permet de recuperer la colonne a recuperer
 
+
+    // les metodes a appeler : 
     public static function all(): array
     {
         return static::get();
     }
 
-    public static function find(int $id)
-    {
-        return static::select(['title', 'content', 'creation_date'])
-            ->where('id', '=', $id)->first();
-    }
+    // public static function find(int $id)
+    // {
+    //     return static::select(['title', 'content', 'creation_date'])
+    //         ->where('id', '=', $id)->first();
+    // }
 
-    public static function last(int $amount, int $from = 0)
-    {
-        // Comme je veux tout récupérer, je ne précise pas de select
-        return static::orderBy(['creation_date' => 'DESC'])->max($amount, $from)
-            ->get();
-    }
+    // public static function last(int $amount, int $from = 0)
+    // {
+    //     // Comme je veux tout récupérer, je ne précise pas de select
+    //     return static::orderBy(['creation_date' => 'DESC'])->max($amount, $from)
+    //         ->get();
+    // }
 
-    public function save()
-    {
-        return static::saveModel($this);
-    }
+    // public function save()
+    // {
+    //     return static::saveModel($this);
+    // }
 
     public static function __callStatic(string $name, array $arguments)
     {

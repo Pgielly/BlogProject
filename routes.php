@@ -15,6 +15,7 @@ Route::get('/', 'PageController@homepage');
 // ---- Moi 
 Route::get('/connexion-page', 'PageController@connection');
 // Route::post('/connexion', 'RecipesController@connection');
+Route::get('/posts', 'PostsController@index');
 
 // Route::post()
 // Route::patch()

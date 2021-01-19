@@ -10,4 +10,8 @@ class PageController
     {
         new View('homepage');
     }
+    public function connection()
+    {
+        new View('connection');
+    }
 }
