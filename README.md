@@ -1,4 +1,4 @@
-# Pockerclicker Blog
+# Music Blog
 
 This project is a blog for people who like music.
 
