@@ -16,8 +16,8 @@ abstract class DB
         if (self::$_instance === null) {
             try {
                 self::$_instance
-                    = new PDO('pgsql:host=postgres;dbname=postgres',
-                    'postgres', 'secret');
+                    = new PDO('mysql:host=localhost;dbname=blogProject',
+                    'root', '0000');
             } catch (\PDOException $e) {
                 die($e->getMessage());
             }
