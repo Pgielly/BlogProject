@@ -13,6 +13,10 @@ class PageController
     }
     public function connection()
     {
-        new View('connection');
+        new View('/recipes/connection');
+    }
+    public function register()
+    {
+        new View('/recipes/register');
     }
 }

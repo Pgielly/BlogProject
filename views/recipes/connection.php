@@ -3,15 +3,14 @@ session_start()
 ?>
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/connection.css">
     <link rel="shortcut icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
-    <title>Acceuil - Blog</title>
+    <title>Connexion - Blog</title>
 </head>
-
 <body>
     <header>
         <nav class="flex">
@@ -26,15 +25,23 @@ session_start()
         <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
     </header>
     <main>
-        <section class="container flex">
-            <img src="../img/unsplash.jpg" alt="">
-            <article >
-                <h2>Post 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsam natus optio ducimus ad, recusandae iusto excepturi sequi, possimus beatae magni, distinctio amet officia deleniti? Necessitatibus minus deserunt labore maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ea labore molestiae ad, est natus quia enim ab voluptate perferendis eligendi veniam quas vel totam omnis quisquam libero cumque. Vero! </p>
-                <span> 23/04/2020 - George Martin</span>
-            </article>
-        </section>
-    </main>
-</body>
+        <div class="circle1"></div>
+        <div class="container">
+            <form class="flex" action="/connection" method="post">
+                <h2> S'identifier </h2>
 
+                <label for="email">Votre email :</label>
+                <input type="email" name="email" >
+
+                <label for="password">Votre mot de passe :</label>
+                <input type="password" name="password" >
+
+                <button type="submit">C'est parti !</button>
+                <p> Vous n'avez pas de compte ? <a href="/register">Cliquez ici !</a></p>
+            </form>
+        </div>
+       <div class="circle2"></div>
+    </main>
+    
+</body>
 </html>

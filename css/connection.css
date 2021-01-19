@@ -3,16 +3,44 @@ main {
   justify-content: center;
 }
 
+main div.circle1 {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 575px;
+  left: 43px;
+  background-image: url(../img/vinyl1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+main div.circle2 {
+  height: 200px;
+  width: 200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 920px;
+  right: 35px;
+  background-image: url(../img/vinyl2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
 main form {
   background-image: linear-gradient(rgba(0, 0, 0, 0.445), rgba(0, 0, 0, 0.445)), url(../img/vinyl.jpg);
   background-position: center;
   background-size: cover;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
   margin-top: 50px;
   padding: 25px;
   color: white;
   height: 500px;
   width: 500px;
-  border: 1px solid black;
   border-radius: 100%;
   justify-content: center;
   flex-direction: column;
@@ -49,4 +77,8 @@ main form button[type=submit] {
 main form button[type=submit]:hover {
   background-color: #c2a570;
   color: white;
+}
+
+main form p {
+  margin-top: 20px;
 }

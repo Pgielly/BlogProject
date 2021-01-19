@@ -8,30 +8,31 @@ use App\Core\View;
 
 class RecipesController
 {
-    // public function index()
-    // {
-    //     new View('recipes/index', compact('recipes'));
-    // }
+    public function index()
+    {
+        $recipes = Recipe::all();
+        new View('recipes/index', compact('recipes'));
+    }
 
-    // public function create()
-    // {
-    //     new View('recipes/create');
-    // }
+    public function create()
+    {
+        new View('recipes/create');
+    }
 
-    // public function store(Request $request)
-    // {
-    //     $recipe = new Recipe();
-    //     $recipe->title = $request->getBody()['title'];
-    //     $recipe->content = $request->getBody()['content'];
+    public function store(Request $request)
+    {
+        $recipe = new Recipe();
+        $recipe->title = $request->getBody()['title'];
+        $recipe->content = $request->getBody()['content'];
 
-    //     if ($recipe->save()) {
-    //         header('Location: /recipes');
-    //     }
-    // }
+        if ($recipe->save()) {
+            header('Location: /recipes');
+        }
+    }
 
-    // public function show(Request $request, int $id)
-    // {
-    //     $recipe = Recipe::find($id);
-    //     new View('recipes/show', compact('recipe')); // ['recipe' => $recipe]
-    // }
+    public function show(Request $request, int $id)
+    {
+        $recipe = Recipe::find($id);
+        new View('recipes/show', compact('recipe')); // ['recipe' => $recipe]
+    }
 }

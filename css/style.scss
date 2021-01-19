@@ -53,5 +53,27 @@ header {
         text-transform: uppercase;
         font-size: 40px;
     }
+}
 
+main{
+    section{
+        align-items: center;
+        padding: 30px;
+        img{
+            height: 200px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.664);
+        }
+        article {
+            margin-left: 50px;
+            h2 {
+                text-align: center;
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                margin-bottom: 20px;
+            }
+            p{
+                margin-bottom: 20px;
+            }
+        }
+    }
 }

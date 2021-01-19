@@ -59,3 +59,28 @@ header h1 {
   text-transform: uppercase;
   font-size: 40px;
 }
+
+main section {
+  align-items: center;
+  padding: 30px;
+}
+
+main section img {
+  height: 200px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.664);
+}
+
+main section article {
+  margin-left: 50px;
+}
+
+main section article h2 {
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+main section article p {
+  margin-bottom: 20px;
+}
