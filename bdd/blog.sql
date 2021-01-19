@@ -1,119 +1,71 @@
--- phpMyAdmin SQL Dump
--- version 4.9.7
--- https://www.phpmyadmin.net/
---
--- Host: localhost:8889
--- Generation Time: Jan 19, 2021 at 09:03 AM
--- Server version: 5.7.32
--- PHP Version: 8.0.0
+-- all tables structures
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+CREATE TABLE if not exists comments 
+(
+  id serial NOT NULL,
+  post_id int NOT NULL,
+  user_id int NOT NULL,
+  message text NOT NULL,
+  time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
 
---
--- Database: `blog`
---
+CREATE TABLE if not exists posts 
+(
+  id serial NOT NULL,
+  user_id int NOT NULL,
+  title text NOT NULL,
+  message text NOT NULL,
+  time timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
 
--- --------------------------------------------------------
+CREATE TABLE users (
+  id serial NOT NULL,
+  role_id int NOT NULL DEFAULT 2,
+  name varchar(255) NOT NULL,
+  mdp varchar(255) NOT NULL,
+  email varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+);
 
---
--- Table structure for table `comment`
---
+CREATE TABLE roles (
+  id serial NOT NULL,
+  name varchar(255) NOT NULL,
+  PRIMARY KEY (id)
+);
 
-CREATE TABLE `comment` (
-  `id` int(11) NOT NULL,
-  `post_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `message` longtext NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+------------------------------------------------------------------------------------------------------
 
--- --------------------------------------------------------
+-- all inner join
 
---
--- Table structure for table `posts`
---
+ALTER TABLE comments
+  ADD CONSTRAINT comment_join FOREIGN KEY (post_id) REFERENCES posts (id),
+  ADD CONSTRAINT user_join_comment FOREIGN KEY (user_id) REFERENCES users (id);
 
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `message` longtext NOT NULL,
-  `time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+ALTER TABLE posts
+  ADD CONSTRAINT user_join_post FOREIGN KEY (user_id) REFERENCES users (id);
 
--- --------------------------------------------------------
+ALTER TABLE users
+  ADD CONSTRAINT role_join FOREIGN KEY (role_id) REFERENCES roles (id);
 
---
--- Table structure for table `users`
---
+------------------------------------------------------------------------------------------------------
 
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `mdp` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Add some values
 
---
--- Indexes for dumped tables
---
+insert into roles (name)
+values ('admin'); -- id = 1
+insert into roles (name)
+values ('user'); -- id = 2
 
---
--- Indexes for table `comment`
---
-ALTER TABLE `comment`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_join_comment` (`user_id`),
-  ADD KEY `comment_join` (`post_id`);
+insert into users (role_id, name, mdp, email)
+values (1, 'admin', '8a30ec6807f71bc69d096d8e4d501ade', 'admin@gmail.com'); -- mdp admin666
 
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `user_join_post` (`user_id`);
+insert into users (name, mdp, email)
+values ('matvki38', '4a7d1ed414474e4033ac29ccb8653d9b', 'oui@gmail.com'); -- mdp 0000
 
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+insert into posts (user_id, title, message)
+values (2, 'Le nouvelle album de ACDC', 'Je aime beaucoup ce nouvelle album, en plus de ca il on fait un vinyle transparent rouge. <img src="https://www.metalzone.fr/wp-content/uploads/2020/10/ac-dc-power-up-vinyle-rouge-e1602575054317.jpg" alt="un vinyle rouge">');
 
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `comment`
---
-ALTER TABLE `comment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `comment`
---
-ALTER TABLE `comment`
-  ADD CONSTRAINT `comment_join` FOREIGN KEY (`post_id`) REFERENCES `posts` (`id`),
-  ADD CONSTRAINT `user_join_comment` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-
---
--- Constraints for table `posts`
---
-ALTER TABLE `posts`
-  ADD CONSTRAINT `user_join_post` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+insert into comments (post_id, user_id, message)
+values (1, 2, 'je continue en disant que il faut a tout pris le écouter.');

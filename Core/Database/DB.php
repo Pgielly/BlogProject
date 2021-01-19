@@ -16,14 +16,15 @@ abstract class DB
         if (self::$_instance === null) {
             try {
                 self::$_instance
-                    = new PDO('mysql:host=localhost;dbname=blogProject',
-                    'root', '0000');
+                    = new PDO('pgsql:host=postgres;dbname=postgres',
+                    'postgres', 'secret');
             } catch (\PDOException $e) {
                 die($e->getMessage());
             }
         }
 
         return self::$_instance;
+
     }
 
     public static function __callStatic(string $name, array $arguments)
