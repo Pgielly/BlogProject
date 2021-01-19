@@ -9,7 +9,14 @@ class PageController
 {
     public function homepage()
     {
-        $recipes = Recipe::last(3);
-        new View('homepage', compact('recipes'));
+        new View('homepage');
+    }
+    public function connection()
+    {
+        new View('/recipes/connection');
+    }
+    public function register()
+    {
+        new View('/recipes/register');
     }
 }
