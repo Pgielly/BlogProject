@@ -12,7 +12,7 @@ Route::get('/register', 'ConnectionsController@create');
 Route::post('/connection', 'ConnectionsController@verify');
 Route::post('/register', 'ConnectionsController@store');
 
-
+Route::get('/admin', 'ConnectionsController@admin');
 
 
 Route::get('/posts', 'PostsController@index');

@@ -17,7 +17,6 @@
                 echo '<script>window.alert("Le nom d\'utilisateur ou l\'adresse mail existe déjà. Veuillez les modifier!")</script>';
             }
         }
-        session_unset();
         ?>
         <nav class="flex">
             <img src="../img/logo.png" alt="logo">

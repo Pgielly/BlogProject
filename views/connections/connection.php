@@ -21,7 +21,6 @@ session_start()
                 echo '<script>window.alert("Le mail ou le mot de passe ne sont pas correct. Veuillez les modifier!")</script>';
             }
         }
-        session_unset();
         ?>
         <nav class="flex">
             <img src="../img/logo.png" alt="logo">

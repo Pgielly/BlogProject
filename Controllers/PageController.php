@@ -10,5 +10,4 @@ class PageController
     {
         new View('homepage');
     }
-    
 }

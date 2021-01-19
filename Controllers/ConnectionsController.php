@@ -19,6 +19,12 @@ class ConnectionsController
         new View('connections/register');
     }
 
+    public function admin()
+    {
+        $users = User::all();
+        new View('connections/index', compact('users'));
+    }
+
     public function verify(Request $request)
     {
         $users = User::all();
@@ -27,9 +33,7 @@ class ConnectionsController
                 session_start();
                 $array = [$user->role_id, $user->name, $user->email];
                 $_SESSION['user'] = $array;
-                var_dump($_SESSION['user']);
-                die;
-                new View('/');
+                header('Location: /');
                 break;
             }
         }
