@@ -25,7 +25,7 @@ session_start()
         <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
     </header>
     <main>
-        <p>Coucou c'eest nous</p>
+        <p>Coucou c'est nous</p>
     </main>
 </body>
 
