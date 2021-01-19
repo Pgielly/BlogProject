@@ -26,14 +26,7 @@ session_start()
         <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
     </header>
     <main>
-        <section class="container flex">
-            <img src="../img/unsplash.jpg" alt="">
-            <article >
-                <h2>Post 1</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum ipsam natus optio ducimus ad, recusandae iusto excepturi sequi, possimus beatae magni, distinctio amet officia deleniti? Necessitatibus minus deserunt labore maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ea labore molestiae ad, est natus quia enim ab voluptate perferendis eligendi veniam quas vel totam omnis quisquam libero cumque. Vero! </p>
-                <span> 23/04/2020 - George Martin</span>
-            </article>
-        </section>
+        <p>Coucou c'est nous</p>
     </main>
 </body>
 

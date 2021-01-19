@@ -24,6 +24,7 @@ abstract class DB
         }
 
         return self::$_instance;
+
     }
 
     public static function __callStatic(string $name, array $arguments)
