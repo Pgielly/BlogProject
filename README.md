@@ -1,6 +1,6 @@
-# Pockerclicker Blog
+# Music Blog
 
-This project is a blog for people who play pockeclicker.
+This project is a blog for people who like music.
 
 ## To do list
 
