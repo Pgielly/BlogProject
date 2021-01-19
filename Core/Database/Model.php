@@ -83,9 +83,14 @@ class Model
 
     public static function find(int $id)
     {
-        return static::select(['title', 'content', 'creation_date'])
+        return static::select(['user_id','title', 'message', 'creation_date'])
             ->where('id', '=', $id)->first();
     }
+
+    // public static function allForOne(int $id): array
+    // {
+    //     return static::allForOne($id);
+    // }
 
     public static function last(int $amount, int $from = 0)
     {

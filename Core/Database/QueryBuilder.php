@@ -204,4 +204,12 @@ class QueryBuilder
     {
         return $this->buildInsert($model);
     }
+
+    // public function allForOne(int $id)
+    // {
+    //     $sql = "SELECT user_id, message, creation_date FROM comments WHERE post_id = $id";
+    //     $request = DB::prepare($sql);
+    //     $request->execute();
+    //     return $request;
+    // }
 }

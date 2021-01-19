@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -9,13 +10,24 @@
 </head>
 
 <body>
-    <a href="/">⬅️ Retour à la page d'accueil</a>
+    <a href="/">Retour à la page d'accueil</a>
     <h1>Les recettes de Tonton</h1>
-    <a href="/posts/create" role="button">➕ Nouvelle recette</a>
+    <?php 
+    
+    if (isset($_SESSION['user'][0])) {
+        ?><a href="/posts/create" role="button">➕ Nouvelle recette</a><?php
+    }else{
+        ?><p>Seul les inscrit et connécté peuve écrit des posts. <a href="/register">S'inscrire!</a></p><?php
+    }
+    
+    ?>
+
+    
+    
     <?php foreach ($posts as $post) : ?>
         <article>
             <header>
-                <a href="#<?= $post->getId(); ?>">
+                <a href="/posts/<?= $post->getId(); ?>">
                     <h3><?= htmlspecialchars($post->getTitle()); ?></h3>
                 </a>
                 <p><?= $post->getCreationDate(); ?></p>

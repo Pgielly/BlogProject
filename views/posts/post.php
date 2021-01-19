@@ -9,19 +9,18 @@
 </head>
 
 <body>
-    <a href="/posts">⬅️ Retour à la page des posts</a>
-    <!-- <?php foreach ($posts as $post) : ?>
+    <a href="/posts">Retour à la page des posts</a>
+    <header>
+        <h3><?= htmlspecialchars($post->getTitle()); ?></h3>
+        <p><?= $post->getCreationDate(); ?></p>
+    </header>
+    <p><?= nl2br(htmlspecialchars($post->getMessage())); ?></p>
+    <!-- <?php foreach ($comments as $comment) : ?>
         <article>
-            <header>
-                <a href="#<?= $post->getId(); ?>">
-                    <h3><?= htmlspecialchars($post->getTitle()); ?></h3>
-                </a>
-                <p><?= $post->getCreationDate(); ?></p>
-            </header>
-            <p><?= nl2br(htmlspecialchars($post->getMessage())); ?></p>
+            <p><?= $comment->getCreationDate(); ?></p>
+            <p><?= nl2br(htmlspecialchars($comment->getMessage())); ?></p>
         </article>
     <?php endforeach; ?> -->
-    
 </body>
 
 </html>

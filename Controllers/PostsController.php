@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Post;
+use App\Models\Comment;
 use App\Core\Router\Request;
 use App\Core\View;
 
@@ -34,6 +35,9 @@ class PostsController
     public function show(Request $request, int $id)
     {
         $post = Post::find($id);
-        new View('posts/show', compact('post')); // ['post' => $post]
+        // $comments = Comment::allForOne($id);
+        // new View('posts/post', compact('post', 'comments')); // ['post' => $post]
+        new View('posts/post', compact('post')); // ['post' => $post]
+
     }
 }

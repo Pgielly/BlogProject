@@ -9,13 +9,12 @@
 </head>
 
 <body>
-    <a href="/posts">⬅️ Retour aux recettes</a>
-    <h1>Les recettes de Tonton</h1>
-    <h3>Nouvelle recette</h3>
+    <a href="/posts">Retour aux posts</a>
+    <h3>Nouveau Post</h3>
     <form action="/posts" method="POST">
         <div>
             <label>
-                <!-- <input type="hidden" name="user_id" value="<?= $_SESSION['user']['id'] ?>"> -->
+                <input type="hidden" name="user_id" value="<?= $_SESSION['user'][0] ?>">
                 <input type="hidden" name="user_id" value="2">
             </label>
         </div>
