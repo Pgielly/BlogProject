@@ -13,26 +13,19 @@ session_start()
 </head>
 
 <body>
-    <header>
-        <nav class="flex">
-            <img src="../img/logo.png" alt="logo" >
-            <ul class="flex">
-                <li><a href="/">Accueil</a></li>
-                <?php 
-                    if (isset($_SESSION['user'])) {
-                        echo '<li><a href="/deconnect">Deconnection</a></li>';
-                    }else{
-                        echo '<li><a href="/connection">Connexion</a></li>';
-                    }
-                ?>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav>
-        <h1> L'évangile du vinyle </h1>
-        <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
-    </header>
+    <?php include_once './src/views/templates/header.php' ?>
     <main>
-        <p>Coucou c'est nous</p>
+    <?php if (!isset($_SESSION['name'])) :?>
+        <div class="title">
+            <h1>Bienvenue</h1>
+        </div>
+        <div>
+            <p>Merci de bien vouloir vous connecter!</p>
+        </div>
+     <?php else: ?>
+            <h2> Bienvenue <?= $_SESSION['name'] ?> ! </h2>
+            <p>Coucou c'est nous</p>
+    <?php endif ?>
     </main>
 </body>
 

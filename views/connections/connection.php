@@ -14,7 +14,8 @@ session_start()
 </head>
 
 <body>
-    <header>
+    <?php include_once './src/views/templates/header.php' ?>
+    <main>
     <?php
         if (isset($_SESSION['error'])) {
             if ($_SESSION['error'] == 'connection') {
@@ -23,18 +24,6 @@ session_start()
             }
         }
         ?>
-        <nav class="flex">
-            <img src="../img/logo.png" alt="logo">
-            <ul class="flex">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/connection">Connexion</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav>
-        <h1> L'évangile du vinyle </h1>
-        <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
-    </header>
-    <main>
         <div class="circle1"></div>
         <div class="container">
             <p> Vous n'avez pas de compte ? <a href="/register">Cliquez ici !</a></p>
