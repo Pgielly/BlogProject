@@ -65,7 +65,7 @@ insert into users (name, mdp, email)
 values ('matvki38', '4a7d1ed414474e4033ac29ccb8653d9b', 'oui@gmail.com'); -- mdp 0000
 
 insert into posts (user_id, title, message)
-values (2, 'Le nouvelle album de ACDC', 'Je aime beaucoup ce nouvelle album, en plus de ca il on fait un vinyle transparent rouge.');
+values (2, 'Le nouvelle album de ACDC', 'J aime beaucoup ce nouvelle album, en plus de ça ils ont fait un vinyle transparent rouge.');
 
 insert into comments (post_id, user_id, message)
-values (1, 2, 'je continue en disant que il faut a tout pris le écouter.');
+values (1, 2, 'Je continue en disant qu il faut a tout pris l écouter.');

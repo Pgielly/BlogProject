@@ -18,16 +18,16 @@ if (isset($_SESSION['user'][0])) {
       <table>
         <tr>
           <td>id</td>
-          <td>role_id</td>
-          <td>name</td>
-          <td>email</td>
+          <td>user_id</td>
+          <td>title</td>
+          <td>Message</td>
         </tr>
-        <?php foreach ($users as $user) : ?>
+        <?php foreach ($posts as $post) : ?>
           <tr>
-            <td><?= $user->getId(); ?></td>
-            <td><?= $user->getRoleId(); ?></td>
-            <td><?= $user->getName(); ?></td>
-            <td><?= $user->getEmail(); ?></td>
+            <td><?= $post->getId(); ?></td>
+            <td><?= $post->getUserId(); ?></td>
+            <td><?= $post->getTitle(); ?></td>
+            <td><?= $post->getMessage(); ?></td>
           </tr>
         <?php endforeach ?>
       </table>
