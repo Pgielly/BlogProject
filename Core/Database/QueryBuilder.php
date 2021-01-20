@@ -147,7 +147,7 @@ class QueryBuilder
     }
     // fin construction du select
 
-    //debut ci=onstruction du insert
+    //debut construction du insert
     private function buildInsert(Model $model): bool
     {
         // INSERT INTO table (column1, column2) VALUES ('column1', 'column2')
@@ -204,4 +204,12 @@ class QueryBuilder
     {
         return $this->buildInsert($model);
     }
+
+    // public function allForOne(int $id)
+    // {
+    //     $sql = "SELECT user_id, message, creation_date FROM comments WHERE post_id = $id";
+    //     $request = DB::prepare($sql);
+    //     $request->execute();
+    //     return $request;
+    // }
 }

@@ -8,13 +8,21 @@
     <link rel="shortcut icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
     <title>Inscription - Blog</title>
 </head>
+
 <body>
     <header>
+        <?php
+        if (isset($_SESSION['error'])) {
+            if ($_SESSION['error'] == 'register') {
+                echo '<script>window.alert("Le nom d\'utilisateur ou l\'adresse mail existe déjà. Veuillez les modifier!")</script>';
+            }
+        }
+        ?>
         <nav class="flex">
-            <img src="../img/logo.png" alt="logo" >
+            <img src="../img/logo.png" alt="logo">
             <ul class="flex">
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/connexion-page">Connexion</a></li>
+                <li><a href="/connection">Connexion</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </nav>
@@ -22,25 +30,22 @@
         <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
     </header>
     <main>
-    <div class="circle1"></div>
+        <div class="circle1"></div>
         <div class="container">
-            <form class="flex" action="/registration-in-progress" method="post">
+            <p> Vous n'avez pas de compte ? <a href="/connection">Cliquez ici !</a></p>
+            <form class="flex" action="/register" method="POST">
                 <h2> S'inscrire </h2>
-
                 <label for="name">Votre nom :</label>
-                <input type="text" name="name" >
-
+                <input type="text" name="name">
                 <label for="email">Votre email :</label>
-                <input type="email" name="email" >
-
+                <input type="email" name="email">
                 <label for="mdp">Votre mot de passe :</label>
-                <input type="password" name="mdp" >
-
+                <input type="password" name="mdp">
                 <button type="submit">C'est parti !</button>
-                <p> Vous n'avez pas de compte ? <a href="/connexion-page">Cliquez ici !</a></p>
             </form>
         </div>
         <div class="circle2"></div>
     </main>
 </body>
+
 </html>

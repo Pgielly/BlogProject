@@ -4,15 +4,15 @@ namespace App\Models;
 
 use App\Core\Database\Model;
 
-class Post extends Model
+class Comment extends Model
 {
     private int $id;
+    private int $post_id;
     private int $user_id;
-    private string $title;
     private string $message;
     private string $creation_date;
 
-    protected array $fillable = ['user_id', 'title', 'message'];
+    protected array $fillable = ['post_id', 'user_id', 'message'];
 
     public function getId(): int
     {
@@ -24,6 +24,16 @@ class Post extends Model
         $this->id = $id;
     }
 
+    public function getPostId(): int
+    {
+        return $this->post_id;
+    }
+
+    public function setPostId(int $post_id): void
+    {
+        $this->post_id = $post_id;
+    }
+
     public function getUserId(): int
     {
         return $this->user_id;
@@ -32,16 +42,6 @@ class Post extends Model
     public function setUserId(int $user_id): void
     {
         $this->user_id = $user_id;
-    }
-
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-
-    public function setTitle(string $title): void
-    {
-        $this->title = $title;
     }
 
     public function getMessage(): string

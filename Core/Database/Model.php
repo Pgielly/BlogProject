@@ -7,9 +7,11 @@ class Model
     protected string $table;
 
     protected array $fillable = [];
+    
     //   debut pour recuperer la table
     public function getTable(): string
     {
+        
         if (isset($this->table)) {
             return $this->table;
         }
@@ -79,23 +81,28 @@ class Model
         return static::get();
     }
 
-    // public static function find(int $id)
+    public static function find(int $id)
+    {
+        return static::select(['user_id','title', 'message', 'creation_date'])
+            ->where('id', '=', $id)->first();
+    }
+
+    // public static function allForOne(int $id): array
     // {
-    //     return static::select(['title', 'content', 'creation_date'])
-    //         ->where('id', '=', $id)->first();
+    //     return static::allForOne($id);
     // }
 
-    // public static function last(int $amount, int $from = 0)
-    // {
-    //     // Comme je veux tout récupérer, je ne précise pas de select
-    //     return static::orderBy(['creation_date' => 'DESC'])->max($amount, $from)
-    //         ->get();
-    // }
+    public static function last(int $amount, int $from = 0)
+    {
+        // Comme je veux tout récupérer, je ne précise pas de select
+        return static::orderBy(['creation_date' => 'DESC'])->max($amount, $from)
+            ->get();
+    }
 
-    // public function save()
-    // {
-    //     return static::saveModel($this);
-    // }
+    public function save()
+    {
+        return static::saveModel($this);
+    }
 
     public static function __callStatic(string $name, array $arguments)
     {

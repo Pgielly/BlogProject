@@ -18,7 +18,7 @@ session_start()
             <img src="../img/logo.png" alt="logo" >
             <ul class="flex">
                 <li><a href="/">Accueil</a></li>
-                <li><a href="/connexion-page">Connexion</a></li>
+                <li><a href="/connection">Connexion</a></li>
                 <li><a href="">Contact</a></li>
             </ul>
         </nav>
