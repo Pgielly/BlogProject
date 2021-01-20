@@ -5,7 +5,7 @@ use App\Core\Router\Route;
 // GET, POST, PATCH, DELETE
 
 Route::get('/', 'PageController@homepage');
-
+Route::get('/deconnect', 'PageController@deconnection');
 
 Route::get('/connection', 'ConnectionsController@connection');
 Route::get('/register', 'ConnectionsController@create');
