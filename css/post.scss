@@ -1,0 +1,31 @@
+body{
+    a{
+        color: rgb(92, 197, 230);
+        text-decoration: none;
+        &#add{
+            background-color: white;
+            margin-left: 50px;
+        }
+    }
+    article{
+        width: 80vw;
+        margin: 20px auto 30px;
+        border: solid 1px rgb(92, 197, 230);
+        padding: 20px;
+        border-radius: 50px;
+    }
+    form{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        input, textarea{
+            width: 500px;
+            border-radius: 50px;
+            margin: 20px 0;
+            padding: 10px 0;
+            &#submit{
+                width: 100px;
+            }
+        }
+    }
+}

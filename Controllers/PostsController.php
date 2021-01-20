@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\Post;
-use App\Models\Comment;
 use App\Core\Router\Request;
 use App\Core\View;
 

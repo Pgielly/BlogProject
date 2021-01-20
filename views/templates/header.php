@@ -3,8 +3,9 @@
         <img src="../img/logo.png" alt="logo" >
         <ul class="flex">
             <li><a href="/">Accueil</a></li>
+            <li><a href="/posts">Postes</a></li>
             <?php if (isset($_SESSION['user'])) : ?> 
-                    <li><a href="/deconnect">Deconnection</a></li>
+                    <li><a href="/deconnect">Deconnexion</a></li>
             <?php else : ?>
                     <li><a href="/connection">Connexion</a></li>
             <?php endif ?>

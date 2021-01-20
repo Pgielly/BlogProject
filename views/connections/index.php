@@ -1,36 +1,40 @@
 <?php
 session_start();
-if (isset($_SESSION['user'][0])) { 
+if (isset($_SESSION['user'][0])) {
   if ($_SESSION['user'][0] === 1) { ?>
     <!DOCTYPE html>
     <html lang="fr">
 
     <head>
       <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-      <meta http-equiv="X-UA-Compatible" content="ie=edge">
-      <title>admin</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/footer.css">
+      <link rel="stylesheet" href="../css/style.css">
+      <link rel="shortcut icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
+      <title>Admin</title>
     </head>
 
     <body>
-      <a href="/">Retour à la page d'accueil</a>
+      <?php include_once './src/views/templates/header.php' ?>
       <h1>Admin</h1>
       <table>
         <tr>
           <td>id</td>
-          <td>role_id</td>
-          <td>name</td>
-          <td>email</td>
+          <td>user_id</td>
+          <td>title</td>
+          <td>Message</td>
         </tr>
-        <?php foreach ($users as $user) : ?>
+        <?php foreach ($posts as $post) : ?>
           <tr>
-            <td><?= $user->getId(); ?></td>
-            <td><?= $user->getRoleId(); ?></td>
-            <td><?= $user->getName(); ?></td>
-            <td><?= $user->getEmail(); ?></td>
+            <td><?= $post->getId(); ?></td>
+            <td><?= $post->getUserId(); ?></td>
+            <td><?= $post->getTitle(); ?></td>
+            <td><?= $post->getMessage(); ?></td>
           </tr>
         <?php endforeach ?>
       </table>
+    <?php include_once './src/views/templates/footer.php' ?>
+
     </body>
 
     </html>

@@ -6,6 +6,7 @@ namespace App\Controllers;
 
 use App\Core\View;
 use App\Models\User;
+use App\Models\Post;
 use App\Core\Router\Request;
 
 class ConnectionsController
@@ -21,8 +22,8 @@ class ConnectionsController
 
     public function admin()
     {
-        $users = User::all();
-        new View('connections/index', compact('users'));
+        $posts = Post::all();
+        new View('connections/index', compact('posts'));
     }
 
     public function verify(Request $request)
