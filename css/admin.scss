@@ -1,0 +1,37 @@
+main{
+    h1 {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 50px 0 30px;
+        letter-spacing: 4px;
+    }
+    div{
+        justify-content: center;
+        table {
+            text-align: center;
+            table-layout: fixed;
+            width: 100%;
+            border-spacing: 0;
+            tr {
+                th {
+                    padding: 10px;
+                    border: 1px solid black ;
+                    text-transform: uppercase;
+                    border-right: none;
+                    border-bottom: none;
+                    &:last-child{
+                        border-right: 1px solid black;
+                    }
+                }
+                td {
+                    border: 1px solid black ;
+                    padding: 10px;
+                    border-right: none;
+                    &:last-of-type {
+                        border-right: 1px solid black;
+                    }
+                }
+            }
+        }
+    }
+}
