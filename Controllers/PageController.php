@@ -10,4 +10,10 @@ class PageController
     {
         new View('homepage');
     }
+    public function deconnection()
+    {
+        session_start();
+        session_destroy();
+        header('Location: /');
+    }
 }

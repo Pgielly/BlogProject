@@ -19,6 +19,7 @@ session_start()
         if (isset($_SESSION['error'])) {
             if ($_SESSION['error'] == 'connection') {
                 echo '<script>window.alert("Le mail ou le mot de passe ne sont pas correct. Veuillez les modifier!")</script>';
+                $_SESSION['error'] == 0;
             }
         }
         ?>

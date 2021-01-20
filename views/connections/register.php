@@ -15,6 +15,7 @@
         if (isset($_SESSION['error'])) {
             if ($_SESSION['error'] == 'register') {
                 echo '<script>window.alert("Le nom d\'utilisateur ou l\'adresse mail existe déjà. Veuillez les modifier!")</script>';
+                $_SESSION['error'] == 0;
             }
         }
         ?>
