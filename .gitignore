@@ -1,3 +1,7 @@
 .DS_Store
+<<<<<<< HEAD
 .idea/
 .docker/conf/postgres
+=======
+Desktop.ini
+>>>>>>> 6cdb321f3b43b772c935c4a98ac984d11017da31
