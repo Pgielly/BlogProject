@@ -4,13 +4,13 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mon carnet de viennoiseries</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="shortcut icon" href="../img/android-chrome-192x192.png" type="image/x-icon">
+    <title>Acceuil - Blog</title>
 </head>
 
 <body>
-    <a href="/">Retour à la page d'accueil</a>
     <h1>Les recettes de Tonton</h1>
     <?php 
     
