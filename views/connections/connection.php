@@ -16,6 +16,14 @@ session_start()
 <body>
     <?php include_once './src/views/templates/header.php' ?>
     <main>
+    <?php
+        if (isset($_SESSION['error'])) {
+            if ($_SESSION['error'] == 'connection') {
+                echo '<script>window.alert("Le mail ou le mot de passe ne sont pas correct. Veuillez les modifier!")</script>';
+                $_SESSION['error'] == 0;
+            }
+        }
+        ?>
         <div class="circle1"></div>
         <div class="container">
             <p> Vous n'avez pas de compte ? <a href="/register">Cliquez ici !</a></p>

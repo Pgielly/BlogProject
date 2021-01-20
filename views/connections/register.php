@@ -10,8 +10,16 @@
 </head>
 
 <body>
-    <?php include_once './src/views/templates/header.php' ?>
+            <?php include_once './src/views/templates/header.php' ?>
     <main>
+        <?php
+        if (isset($_SESSION['error'])) {
+            if ($_SESSION['error'] == 'register') {
+                echo '<script>window.alert("Le nom d\'utilisateur ou l\'adresse mail existe déjà. Veuillez les modifier!")</script>';
+                $_SESSION['error'] == 0;
+            }
+        }
+        ?>
         <div class="circle1"></div>
         <div class="container">
             <p> Vous avez un compte ? <a href="/connection">Cliquez ici !</a></p>
