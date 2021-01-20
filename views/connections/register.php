@@ -10,29 +10,11 @@
 </head>
 
 <body>
-    <header>
-        <?php
-        if (isset($_SESSION['error'])) {
-            if ($_SESSION['error'] == 'register') {
-                echo '<script>window.alert("Le nom d\'utilisateur ou l\'adresse mail existe déjà. Veuillez les modifier!")</script>';
-            }
-        }
-        ?>
-        <nav class="flex">
-            <img src="../img/logo.png" alt="logo">
-            <ul class="flex">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/connection">Connexion</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav>
-        <h1> L'évangile du vinyle </h1>
-        <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
-    </header>
+    <?php include_once './src/views/templates/header.php' ?>
     <main>
         <div class="circle1"></div>
         <div class="container">
-            <p> Vous n'avez pas de compte ? <a href="/connection">Cliquez ici !</a></p>
+            <p> Vous avez un compte ? <a href="/connection">Cliquez ici !</a></p>
             <form class="flex" action="/register" method="POST">
                 <h2> S'inscrire </h2>
                 <label for="name">Votre nom :</label>

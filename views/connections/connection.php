@@ -14,25 +14,7 @@ session_start()
 </head>
 
 <body>
-    <header>
-    <?php
-        if (isset($_SESSION['error'])) {
-            if ($_SESSION['error'] == 'connection') {
-                echo '<script>window.alert("Le mail ou le mot de passe ne sont pas correct. Veuillez les modifier!")</script>';
-            }
-        }
-        ?>
-        <nav class="flex">
-            <img src="../img/logo.png" alt="logo">
-            <ul class="flex">
-                <li><a href="/">Accueil</a></li>
-                <li><a href="/connection">Connexion</a></li>
-                <li><a href="">Contact</a></li>
-            </ul>
-        </nav>
-        <h1> L'évangile du vinyle </h1>
-        <p> "On ne peut pas faire n’importe quoi avec la musique contemporaine. Il faut la jouer à bon Messiaen." - Une personne drôle</p>
-    </header>
+    <?php include_once './src/views/templates/header.php' ?>
     <main>
         <div class="circle1"></div>
         <div class="container">
